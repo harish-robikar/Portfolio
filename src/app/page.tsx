@@ -1,8 +1,7 @@
 
 
 import Contact from "@/components/contact/contact";
-import Footer from "@/components/global/footer";
-import Navbar from "@/components/global/navbar";
+
 import About from "@/components/pages/about/about";
 import Education from "@/components/pages/education/education";
 import Experience from "@/components/pages/experience/experience";

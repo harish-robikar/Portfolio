@@ -20,8 +20,7 @@ import {
   SiHtml5,
   SiRedux,
   SiPostman,
-  SiSwagger,
-  SiFirebase,
+  
   SiCloudinary,
   SiVercel,
   SiNetlify,
