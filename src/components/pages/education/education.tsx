@@ -34,7 +34,7 @@ const Education = () => {
   return (
     <section
       id="education"
-      className="bg-white py-18 sm:py-14 lg:py-16 relative overflow-hidden"
+      className="bg-white py-18 sm:py-14 lg:py-12 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Title */}

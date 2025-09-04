@@ -101,17 +101,27 @@ const Navbar = () => {
         className="fixed w-full z-50 bg-white/95 backdrop-blur-xl shadow-lg border-b border-gray-200"
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
+          <div className="flex justify-between items-center py-2">
+            {/* Logo */}
+            {/* Logo */}
             {/* Logo */}
             <a
               ref={logoRef}
               href="#hero"
-              className="text-2xl font-bold tracking-tight text-gray-900 hover:opacity-80"
+              className="flex flex-col leading-tight hover:opacity-80"
             >
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Harish
+              <span
+                className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent 
+               text-xl sm:text-xl md:text-2xl lg:text-2xl font-bold tracking-tight"
+              >
+                HARISH ROBIKAR
               </span>
-              <span className="text-gray-600">.dev</span>
+              <span
+                className="text-gray-600 
+               text-sm sm:text-sm md:text-base lg:text-base tracking-wide sm:tracking-widest"
+              >
+                Full Stack Developer
+              </span>
             </a>
 
             {/* Desktop Navigation */}
@@ -185,13 +195,22 @@ const Navbar = () => {
         <div className="flex justify-between items-center p-6 border-b border-gray-200">
           <a
             href="#hero"
-            className="text-2xl font-bold tracking-tight text-gray-900 hover:opacity-80"
+            className="flex flex-col leading-tight hover:opacity-80"
           >
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Harish
+            <span
+              className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent 
+               text-xl sm:text-xl md:text-2xl lg:text-2xl font-bold tracking-tight"
+            >
+              HARISH ROBIKAR
             </span>
-            <span className="text-gray-600">.dev</span>
+            <span
+              className="text-gray-600 
+               text-md sm:text-sm md:text-base lg:text-base tracking-wide sm:tracking-widest"
+            >
+              Full Stack Developer
+            </span>
           </a>
+
           <button
             onClick={() => setMenuOpen(false)}
             className="p-2 rounded-lg text-gray-500 hover:bg-gray-100 transition-colors duration-200"
@@ -237,3 +256,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+
