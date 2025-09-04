@@ -2,8 +2,8 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import {
   FaReact,
   FaNodeJs,
@@ -16,31 +16,76 @@ import {
   SiNextdotjs,
   SiTailwindcss,
   SiTypescript,
+  SiJavascript,
+  SiHtml5,
+  SiRedux,
+  SiPostman,
+  SiSwagger,
+  SiFirebase,
+  SiCloudinary,
+  SiVercel,
+  SiNetlify,
+  SiExpress,
+  SiGit,
 } from "react-icons/si";
+import Image from "next/image";
 
-// Skill Categories
-const frontend = [
-  "React.js",
-  "Next.js",
-  "Tailwind CSS",
-  "JavaScript (ES6+)",
-  "TypeScript",
-  "HTML5",
-  "CSS3",
-];
-const backend = [
-  "Node.js",
-  "Express.js",
-  "REST APIs",
-  "JWT",
-  "Multer",
-  "Nodemailer",
-];
-const database = ["MongoDB", "Mongoose"];
-const tools = ["Git & GitHub", "Postman", "VS Code"];
-const languages = ["C", "C++", "Java", "Python"];
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
-// Floating Icons Component (Vertical float only)
+// VSCode SVG Component
+const VSCodeIcon = () => (
+  <div className="w-10 h-10 relative">
+    <Image
+      src="/project/vscode.png"
+      alt="Visual Studio Code"
+      width={40}
+      height={40}
+      className="object-contain"
+    />
+  </div>
+);
+
+// Acertinity UI / Shadcn placeholder icon
+const AcertinityUIIcon = () => (
+  <svg
+    width="40"
+    height="40"
+    viewBox="0 0 64 64"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect x="2" y="2" width="60" height="60" rx="8" ry="8" fill="#4F46E5" />
+    <text
+      x="32"
+      y="42"
+      fontSize="28"
+      textAnchor="middle"
+      fill="white"
+      fontFamily="Arial, sans-serif"
+      fontWeight="bold"
+    >
+      A
+    </text>
+  </svg>
+);
+
+// GSAP Logo
+const GSAPIcon = () => (
+  <svg
+    width="40"
+    height="40"
+    viewBox="0 0 512 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle cx="256" cy="256" r="256" fill="#88CE02" />
+    <path
+      fill="#fff"
+      d="M322.9 167.3c-9.6-3.8-20.5.9-24.3 10.5l-27.6 69.3-37.3-47.6c-7-9-20-10.7-29-3.7s-10.7 20-3.7 29l55.7 71c4.2 5.4 10.8 8.4 17.6 8.1 7-.3 13.2-4.6 15.9-11l41.2-103.4c3.8-9.6-0.9-20.5-10.5-24.3z"
+    />
+  </svg>
+);
+
+// Floating Background Icons
 const FloatingIcons = () => {
   const iconsRef = useRef<HTMLDivElement[]>([]);
 
@@ -48,31 +93,49 @@ const FloatingIcons = () => {
     iconsRef.current.forEach((el, i) => {
       if (!el) return;
       gsap.to(el, {
-        y: "random(-20,20)", // vertical float only
-        rotation: "random(-5,5)", // subtle rotation
-        duration: 5 + i,
+        y: "random(-10,10)",
+        rotation: "random(-2,2)",
+        duration: 8 + i,
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
-        delay: i * 0.2,
+        delay: i * 0.3,
       });
     });
   }, []);
 
   const icons = [
-    <div className="text-cyan-400/20"><FaReact size={50} /></div>,
-    <div className="text-green-500/20"><FaNodeJs size={50} /></div>,
-    <div className="text-yellow-400/20"><FaDatabase size={50} /></div>,
-    <div className="text-green-400/20"><SiMongodb size={50} /></div>,
-    <div className="text-gray-400/10"><SiNextdotjs size={50} /></div>,
-    <div className="text-sky-400/20"><SiTailwindcss size={50} /></div>,
-    <div className="text-blue-600/20"><SiTypescript size={50} /></div>,
-    <div className="text-orange-500/20"><FaGitAlt size={50} /></div>,
-    <div className="text-blue-300/20"><FaPython size={50} /></div>,
+    <div className="text-cyan-400/10">
+      <FaReact size={40} />
+    </div>,
+    <div className="text-green-500/10">
+      <FaNodeJs size={40} />
+    </div>,
+    <div className="text-yellow-400/10">
+      <FaDatabase size={40} />
+    </div>,
+    <div className="text-green-400/10">
+      <SiMongodb size={40} />
+    </div>,
+    <div className="text-gray-400/10">
+      <SiNextdotjs size={40} />
+    </div>,
+    <div className="text-sky-400/10">
+      <SiTailwindcss size={40} />
+    </div>,
+    <div className="text-blue-600/10">
+      <SiTypescript size={40} />
+    </div>,
+    <div className="text-orange-500/10">
+      <FaGitAlt size={40} />
+    </div>,
+    <div className="text-blue-300/10">
+      <FaPython size={40} />
+    </div>,
   ];
 
   return (
-    <div className="absolute inset-0  pointer-events-none overflow-hidden">
+    <div className="absolute inset-0 pointer-events-none overflow-hidden">
       {icons.map((icon, i) => (
         <div
           key={i}
@@ -82,7 +145,7 @@ const FloatingIcons = () => {
           className="absolute"
           style={{
             top: `${Math.random() * 80 + 10}%`,
-            left: `${Math.random() * 80 + 10}%`, // fixed horizontal position
+            left: `${Math.random() * 80 + 10}%`,
           }}
         >
           {icon}
@@ -92,68 +155,189 @@ const FloatingIcons = () => {
   );
 };
 
+// Skills Array
+
+const skills = [
+  {
+    name: "Next.js",
+    icon: (
+      <div className="text-gray-800">
+        <SiNextdotjs size={40} />
+      </div>
+    ),
+  },
+  {
+    name: "Node.js",
+    icon: (
+      <div className="text-green-600">
+        <FaNodeJs size={40} />
+      </div>
+    ),
+  },
+  {
+    name: "Express.js",
+    icon: (
+      <div className="text-gray-700">
+        <SiExpress size={40} />
+      </div>
+    ),
+  },
+  {
+    name: "React.js",
+    icon: (
+      <div className="text-cyan-500">
+        <FaReact size={40} />
+      </div>
+    ),
+  },
+  {
+    name: "Tailwind CSS",
+    icon: (
+      <div className="text-sky-500">
+        <SiTailwindcss size={40} />
+      </div>
+    ),
+  },
+  {
+    name: "CSS3",
+    icon: (
+      <div className="text-orange-500">
+        <SiHtml5 size={40} />
+      </div>
+    ),
+  },
+  {
+    name: "Netlify",
+    icon: (
+      <div className="text-teal-500">
+        <SiNetlify size={40} />
+      </div>
+    ),
+  },
+  {
+    name: "Vercel",
+    icon: (
+      <div className="text-black">
+        <SiVercel size={40} />
+      </div>
+    ),
+  },
+  {
+    name: "AWS",
+    icon: (
+      <div className="text-orange-600">
+        <SiCloudinary size={40} />
+      </div>
+    ),
+  },
+  {
+    name: "MongoDB",
+    icon: (
+      <div className="text-green-500">
+        <SiMongodb size={40} />
+      </div>
+    ),
+  },
+  {
+    name: "Postman",
+    icon: (
+      <div className="text-red-500">
+        <SiPostman size={40} />
+      </div>
+    ),
+  },
+  {
+    name: "Git/GitHub",
+    icon: (
+      <div className="text-orange-600">
+        <SiGit size={40} />
+      </div>
+    ),
+  },
+  { name: "VSCode", icon: <VSCodeIcon /> },
+  {
+    name: "Redux",
+    icon: (
+      <div className="text-purple-600">
+        <SiRedux size={40} />
+      </div>
+    ),
+  },
+  { name: "Acertinity UI", icon: <AcertinityUIIcon /> },
+  { name: "GSAP", icon: <GSAPIcon /> },
+  {
+    name: "Framer Motion",
+    icon: (
+      <div className="text-pink-500">
+        <FaReact size={40} />
+      </div>
+    ),
+  },
+  {
+    name: "JavaScript",
+    icon: (
+      <div className="text-yellow-400">
+        <SiJavascript size={40} />
+      </div>
+    ),
+  },
+];
+
 const Skills = () => {
-  const skillCategories = [
-    { title: "Frontend", items: frontend },
-    { title: "Backend", items: backend },
-    { title: "Databases", items: database },
-    { title: "Dev Tools", items: tools },
-    { title: "Programming Languages", items: languages },
-  ];
+  const skillRefs = useRef<HTMLDivElement[]>([]);
+
+  useEffect(() => {
+    skillRefs.current.forEach((el, i) => {
+      if (!el) return;
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: i * 0.1,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+          },
+        }
+      );
+    });
+  }, []);
 
   return (
-    <section className="relative   py-12 bg-gray-50 overflow-hidden">
-      {/* Floating Icons */}
+    <section className="relative py-16 bg-white overflow-hidden">
       <FloatingIcons />
 
-      <div className="relative max-w-7xl mx-auto px-6 md:px-6 lg:px-8">
-        {/* Section Title */}
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-          className="text-4xl md:text-6xl sm:text-3xl font-extrabold text-center text-gray-900"
-        >
-          Technical Skills
-        </motion.h2>
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 z-10">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-4">
+          My{" "}
+          <span className=" bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+            Technology
+          </span>{" "}
+          Expertise
+        </h2>
 
-        {/* Subtle Line */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
-          viewport={{ once: true }}
-          className="mt-6 h-[2px] w-24 bg-gray-900 mx-auto origin-left"
-        />
+        <p className="text-center text-gray-600 max-w-3xl mx-auto mb-12">
+          The tools and technologies I use to build high-performance, scalable
+          web applications that deliver exceptional user experiences.
+        </p>
 
-        {/* Skills Grid */}
-        <div className="mt-20 grid md:grid-cols-2 lg:grid-cols-3 gap-12 relative z-10">
-          {skillCategories.map((category, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: idx * 0.15 }}
-              viewport={{ once: true }}
-              className="p-8 rounded-3xl bg-white/30 backdrop-blur-lg border border-gray-200 hover:bg-white/50 hover:scale-105 transition-transform duration-500 shadow-lg"
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          {skills.map((skill, i) => (
+            <div
+              key={i}
+              ref={(el) => {
+                if (el) skillRefs.current[i] = el;
+              }}
+              className="flex flex-col items-center justify-center p-6 rounded-2xl bg-white shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-500"
             >
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                {category.title}
-              </h3>
-              <ul className="space-y-2 text-gray-700 text-lg">
-                {category.items.map((item, i) => (
-                  <motion.li
-                    key={i}
-                    initial={{ y: 10, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.05 * i }}
-                  >
-                    {item}
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
+              {skill.icon}
+              <p className="mt-3 text-gray-900 font-medium text-sm">
+                {skill.name}
+              </p>
+            </div>
           ))}
         </div>
       </div>

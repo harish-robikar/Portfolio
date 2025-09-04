@@ -204,7 +204,7 @@ const Hero = () => {
             {/* Subtitle */}
             <div ref={subtitleRef} className="space-y-3 sm:space-y-4">
               <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-800 leading-tight">
-                MERN Stack Developer
+                Full Stack Developer
               </p>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed max-w-full sm:max-w-2xl mx-auto lg:mx-0 font-light">
                 Crafting scalable web applications with modern JavaScript
