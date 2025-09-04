@@ -77,6 +77,7 @@ const projects = [
       "Tailwind CSS",
       "MongoDB",
       "Socket.io",
+      "Brevo",
     ],
     link: "https://socialnotch.spaces-india.in/",
   },
@@ -93,8 +94,18 @@ const projects = [
       "Express.js",
       "MongoDB",
       "TypeScript",
+      "Brevo",
     ],
     link: "https://www.code-sharks.com/",
+  },
+  {
+    title: "MGBW – Mangalore Ganesh Beedi Works",
+    description:
+      "Official website of MGBW Group, a family-driven enterprise established in 1940. The site showcases their diversified businesses, including beedi manufacturing, incense production, luxury resorts, and automotive lifestyle brand.",
+    image: "/project/mgbw.png",
+    type: "Frontend",
+    tech: ["Next.js", "Tailwind CSS", "TypeScript", "Brevo"],
+    link: "https://mgbw2.vercel.app/",
   },
 ];
 
@@ -147,7 +158,7 @@ const Projects = () => {
                     className="object-contain"
                   />
                 </motion.div>
-                <span className="absolute top-3 left-3 bg-gray-600 text-white text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded-full shadow-md">
+                <span className="absolute top-3 left-3 bg-gray-900 text-white text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded-full shadow-md">
                   {project.type}
                 </span>
               </div>

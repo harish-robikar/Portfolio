@@ -1,8 +1,3 @@
-
-
-
-
-
 "use client";
 
 import React from "react";
@@ -38,14 +33,25 @@ const Education = () => {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Title */}
-        <motion.h2
-          className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-gray-900 mb-14 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          Education & Qualification
-        </motion.h2>
+        <div className="text-center mb-14">
+          <motion.h2
+            className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-gray-900"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            Education & Qualification
+          </motion.h2>
+
+          {/* Animated line below heading */}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{ duration: 1, ease: "easeInOut", delay: 0.4 }}
+            viewport={{ once: true }}
+            className="mt-4 h-[2px] w-24 bg-black mx-auto origin-left"
+          />
+        </div>
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
@@ -72,7 +78,9 @@ const Education = () => {
               <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 text-center">
                 {edu.title}
               </h3>
-              <p className="mt-3 text-gray-600 text-center">{edu.institution}</p>
+              <p className="mt-3 text-gray-600 text-center">
+                {edu.institution}
+              </p>
               <p className="mt-1 text-gray-500 text-center">{edu.duration}</p>
               <p className="mt-4 text-gray-800 text-center font-medium">
                 {edu.score}

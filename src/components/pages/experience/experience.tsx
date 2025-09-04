@@ -37,14 +37,25 @@ const Experience = () => {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Section Title */}
-        <motion.h2
-          className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-gray-900 mb-12 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          Experience
-        </motion.h2>
+        <div className="text-center mb-12">
+          <motion.h2
+            className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-gray-900"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            Experience
+          </motion.h2>
+
+          {/* Animated line below heading */}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{ duration: 1, ease: "easeInOut", delay: 0.4 }}
+            viewport={{ once: true }}
+            className="mt-4 h-[2px] w-24 bg-black mx-auto origin-left"
+          />
+        </div>
 
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14">
