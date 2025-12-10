@@ -12,7 +12,7 @@ const Experience = () => {
       duration: "Jan 2025 – Present",
       description:
         "Responsible for developing and maintaining modern web applications, collaborating with cross-functional teams, implementing scalable features, and ensuring smooth performance and usability of the platform.",
-      color: "blue",
+      color: "apple",
     },
     {
       role: "Frontend Developer",
@@ -24,7 +24,7 @@ const Experience = () => {
     },
   ];
   const colorClasses: Record<string, { bg: string; text: string }> = {
-    blue: { bg: "bg-blue-100", text: "text-blue-600" },
+    apple: { bg: "bg-blue-50", text: "text-[#0071e3]" },
     green: { bg: "bg-green-100", text: "text-green-600" },
     red: { bg: "bg-red-100", text: "text-red-600" },
     yellow: { bg: "bg-yellow-100", text: "text-yellow-600" },
