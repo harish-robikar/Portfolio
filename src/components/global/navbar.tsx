@@ -12,22 +12,31 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("hero");
 
-  // Observe sections to set active link
+  // Observe sections to set active link based on scroll position
   useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.6 }
-    );
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section[id]");
+      const scrollPosition = window.scrollY + 100; // Account for navbar height
 
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+      sections.forEach((section) => {
+        const sectionElement = section as HTMLElement;
+        const sectionTop = sectionElement.offsetTop;
+        const sectionHeight = sectionElement.offsetHeight;
+
+        if (
+          scrollPosition >= sectionTop &&
+          scrollPosition < sectionTop + sectionHeight
+        ) {
+          setActiveSection(section.id);
+        }
+      });
+    };
+
+    // Initial check
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Initial animation
@@ -111,7 +120,7 @@ const Navbar = () => {
               className="flex flex-col leading-tight hover:opacity-80"
             >
               <span
-                className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent 
+                className="text-gray-900 
                text-xl sm:text-xl md:text-2xl lg:text-2xl font-bold tracking-tight"
               >
                 HARISH ROBIKAR
@@ -135,13 +144,13 @@ const Navbar = () => {
                   href={item.href}
                   className={`relative text-sm font-medium transition-all duration-300 group ${
                     activeSection === item.href.replace("#", "")
-                      ? "text-blue-600"
-                      : "text-gray-900 hover:text-blue-600"
+                      ? "text-[#0071e3]"
+                      : "text-gray-600 hover:text-[#0071e3]"
                   }`}
                 >
                   {item.name}
                   <span
-                    className={`absolute left-0 -bottom-1 h-0.5 bg-blue-600 transition-all duration-300 ${
+                    className={`absolute left-0 -bottom-1 h-0.5 bg-[#0071e3] transition-all duration-300 ${
                       activeSection === item.href.replace("#", "")
                         ? "w-full"
                         : "w-0 group-hover:w-full"
@@ -198,7 +207,7 @@ const Navbar = () => {
             className="flex flex-col leading-tight hover:opacity-80"
           >
             <span
-              className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent 
+              className="text-gray-900 
                text-xl sm:text-xl md:text-2xl lg:text-2xl font-bold tracking-tight"
             >
               HARISH ROBIKAR
@@ -229,8 +238,8 @@ const Navbar = () => {
                 onClick={() => setMenuOpen(false)}
                 className={`flex items-center justify-between text-lg font-medium transition-all duration-200 py-2 ${
                   activeSection === item.href.replace("#", "")
-                    ? "text-blue-600"
-                    : "text-gray-900 hover:text-blue-600"
+                    ? "text-[#0071e3]"
+                    : "text-gray-600 hover:text-[#0071e3]"
                 }`}
               >
                 <span>{item.name}</span>
@@ -256,7 +265,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
-

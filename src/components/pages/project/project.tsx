@@ -188,7 +188,7 @@ const Projects = () => {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 text-sm font-semibold hover:text-blue-500 transition"
+                  className="text-[#0071e3] text-sm font-semibold hover:text-[#0077ED] transition"
                 >
                   View Project →
                 </motion.a>

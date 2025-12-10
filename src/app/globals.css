@@ -27,6 +27,14 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Account for fixed navbar height */
+}
+
+/* Smooth scroll for all anchor navigation */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 /* Add this to your globals.css or main CSS file */
 

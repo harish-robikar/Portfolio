@@ -195,10 +195,7 @@ const Hero = () => {
           <div className="text-center lg:text-left space-y-6 sm:space-y-8 md:space-y-10 order-2 lg:order-1 mt-12">
             <div ref={textRef} className="space-y-4 sm:space-y-6">
               <h1 className="text-2xl sm:text-4xl md:text-4xl lg:text-6xl xl:text-6xl font-bold tracking-tight leading-none text-gray-900">
-                Hi, I'm{" "}
-                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                  Poft Floi
-                </span>
+                Hi, I'm <span className="text-[#0071e3]">Poft Floi</span>
               </h1>
             </div>
 
@@ -285,10 +282,10 @@ const Hero = () => {
                 </div>
 
                 {/* Decorative elements - responsive positioning and sizing */}
-                <div className="absolute top-8 sm:top-12 md:top-16 right-6 sm:right-8 md:right-12 w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 bg-blue-500 rounded-full opacity-60"></div>
-                <div className="absolute bottom-12 sm:bottom-16 md:bottom-20 left-8 sm:left-12 md:left-16 w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 bg-purple-500 rounded-full opacity-60"></div>
-                <div className="absolute top-20 sm:top-24 md:top-32 left-4 sm:left-6 md:left-8 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-indigo-500 rounded-full opacity-60"></div>
-                <div className="absolute bottom-20 sm:bottom-24 md:bottom-32 right-6 sm:right-8 md:right-12 w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 bg-cyan-500 rounded-full opacity-60"></div>
+                <div className="absolute top-8 sm:top-12 md:top-16 right-6 sm:right-8 md:right-12 w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 bg-[#0071e3] rounded-full opacity-40"></div>
+                <div className="absolute bottom-12 sm:bottom-16 md:bottom-20 left-8 sm:left-12 md:left-16 w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 bg-gray-400 rounded-full opacity-40"></div>
+                <div className="absolute top-20 sm:top-24 md:top-32 left-4 sm:left-6 md:left-8 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#0071e3] rounded-full opacity-30"></div>
+                <div className="absolute bottom-20 sm:bottom-24 md:bottom-32 right-6 sm:right-8 md:right-12 w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 bg-gray-300 rounded-full opacity-40"></div>
               </div>
             </div>
           </div>
