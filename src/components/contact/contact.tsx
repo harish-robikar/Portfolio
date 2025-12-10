@@ -1,5 +1,3 @@
-
-
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 
@@ -150,7 +148,7 @@ const Contact = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gray-100 hover:bg-black hover:text-white text-gray-700 p-3 rounded-full transition"
+                    className="bg-gray-100 hover:bg-black hover:text-white text-gray-700 p-3 rounded-full transition cursor-pointer"
                   >
                     {social.icon}
                   </a>
@@ -230,7 +228,7 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full bg-black text-white py-4 rounded-xl font-medium hover:bg-gray-900 transition flex items-center justify-center gap-2"
+                className="w-full bg-black text-white py-4 rounded-xl font-medium hover:bg-gray-900 transition flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Send size={18} />
                 Send Message

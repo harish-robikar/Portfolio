@@ -325,7 +325,7 @@ const Skills = () => {
               ref={(el) => {
                 if (el) skillRefs.current[i] = el;
               }}
-              className="flex flex-col items-center justify-center p-6 rounded-2xl bg-white shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-500"
+              className="flex flex-col items-center justify-center p-6 rounded-2xl bg-white shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-500 cursor-pointer"
             >
               {skill.icon}
               <p className="mt-3 text-gray-900 font-medium text-sm">

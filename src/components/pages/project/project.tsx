@@ -146,7 +146,7 @@ const Projects = () => {
               }}
               viewport={{ once: true }}
               whileHover={{ y: -6 }}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col"
+              className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col cursor-pointer"
             >
               {/* Image with badge */}
               <div className="relative w-full h-48">
@@ -188,7 +188,7 @@ const Projects = () => {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#0071e3] text-sm font-semibold hover:text-[#0077ED] transition"
+                  className="text-[#0071e3] text-sm font-semibold hover:text-[#0077ED] transition cursor-pointer"
                 >
                   View Project →
                 </motion.a>

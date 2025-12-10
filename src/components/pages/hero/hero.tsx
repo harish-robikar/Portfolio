@@ -233,14 +233,14 @@ const Hero = () => {
             >
               <a
                 href="#projects"
-                className="group relative inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 text-base sm:text-lg font-medium text-white bg-black rounded-full transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto sm:min-w-[180px] md:min-w-[200px] max-w-full"
+                className="group relative inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 text-base sm:text-lg font-medium text-white bg-black rounded-full transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto sm:min-w-[180px] md:min-w-[200px] max-w-full cursor-pointer"
               >
                 <span className="relative z-10">View My Work</span>
               </a>
 
               <a
                 href="#contact"
-                className="group inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 text-base sm:text-lg font-medium text-black bg-white border border-gray-300 rounded-full hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto sm:min-w-[180px] md:min-w-[200px] max-w-full"
+                className="group inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 text-base sm:text-lg font-medium text-black bg-white border border-gray-300 rounded-full hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto sm:min-w-[180px] md:min-w-[200px] max-w-full cursor-pointer"
               >
                 <span>Get in Touch</span>
               </a>

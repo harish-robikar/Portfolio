@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -56,7 +55,7 @@ const About = () => {
         >
           <a
             href="#projects"
-            className="px-8 py-3 text-lg font-medium bg-black text-white rounded-full hover:bg-gray-800 transition"
+            className="px-8 py-3 text-lg font-medium bg-black text-white rounded-full hover:bg-gray-800 transition cursor-pointer"
           >
             Explore My Work
           </a>
