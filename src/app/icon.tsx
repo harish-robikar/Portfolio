@@ -42,7 +42,7 @@ export default async function Icon() {
       >
         {imageData ? (
           <img
-            src={imageData as any}
+            src={imageData as unknown as string}
             alt="Harish"
             style={{
               width: "100%",
