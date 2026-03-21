@@ -53,8 +53,8 @@ export async function POST(req: Request) {
       const errorData = await response.json();
       console.error("Brevo API Error:", errorData);
       return NextResponse.json(
-        { error: "Failed to send email." },
-        { status: 500 }
+        { error: errorData.message || "Failed to send email." },
+        { status: response.status }
       );
     }
   } catch (error) {
