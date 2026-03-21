@@ -12,20 +12,17 @@ export const contentType = "image/png";
 
 // Image generation
 export default async function Icon() {
-  const origin = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "http://localhost:3000";
-
-  const imageUrl = `${origin}/harishpic.PNG`;
-
   let imageData: ArrayBuffer | null = null;
+
   try {
-    const response = await fetch(imageUrl);
+    // Reference the image relative to this file's location during the build
+    const relativeUrl = new URL("../../public/harishpic.PNG", import.meta.url);
+    const response = await fetch(relativeUrl);
     if (response.ok) {
       imageData = await response.arrayBuffer();
     }
   } catch (error) {
-    console.error("Failed to fetch icon image:", error);
+    console.error("Failed to load icon image from file:", error);
   }
 
   return new ImageResponse(
@@ -60,16 +57,9 @@ export default async function Icon() {
               width: "100%",
               height: "100%",
               background: "#d97706",
-              color: "white",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 16,
-              fontWeight: "bold",
+              borderRadius: "50%",
             }}
-          >
-            H
-          </div>
+          />
         )}
       </div>
     ),
@@ -79,5 +69,6 @@ export default async function Icon() {
     }
   );
 }
+
 
 
