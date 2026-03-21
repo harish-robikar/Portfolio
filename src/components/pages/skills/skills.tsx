@@ -10,6 +10,7 @@ import {
   FaDatabase,
   FaGitAlt,
   FaPython,
+  FaWhatsapp,
 } from "react-icons/fa";
 import {
   SiMongodb,
@@ -25,6 +26,8 @@ import {
   SiNetlify,
   SiExpress,
   SiGit,
+  SiFirebase,
+  SiAmazonwebservices,
 } from "react-icons/si";
 import Image from "next/image";
 
@@ -64,6 +67,36 @@ const AcertinityUIIcon = () => (
     >
       A
     </text>
+  </svg>
+);
+
+// Shiprocket SVG Icon
+const ShiprocketIcon = () => (
+  <svg width="40" height="40" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#852f8d" d="M256 0c-141.38 0-256 114.62-256 256s114.62 256 256 256 256-114.62 256-256-114.62-256-256-256zm0 464c-114.88 0-208-93.12-208-208s93.12-208 208-208 208 93.12 208 208-93.12 208-208 208z" />
+    <path fill="#852f8d" d="M371.4 140.6c-4.7-4.7-12.3-4.7-17 0l-128.4 128.4-56.4-56.4c-4.7-4.7-12.3-4.7-17 0s-4.7 12.3 0 17l64.9 64.9c4.7 4.7 12.3 4.7 17 0l136.9-136.9c4.7-4.7 4.7-12.3 0-17z" />
+  </svg>
+);
+
+// MSG91 SVG Icon
+const MSG91Icon = () => (
+  <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#ed1c24" d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+  </svg>
+);
+
+// Render Logo
+const RenderIcon = () => (
+  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" fill="#2E2E2E" />
+    <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="white" strokeWidth="1" />
+  </svg>
+);
+
+// Brevo Icon
+const BrevoIcon = () => (
+  <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#00df9a" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-2h2v2zm0-4H9V7h2v5z" />
   </svg>
 );
 
@@ -221,10 +254,10 @@ const skills = [
     ),
   },
   {
-    name: "AWS",
+    name: "AWS S3",
     icon: (
-      <div className="text-orange-600">
-        <SiCloudinary size={40} />
+      <div className="text-[#FF9900]">
+        <SiAmazonwebservices size={40} />
       </div>
     ),
   },
@@ -279,6 +312,34 @@ const skills = [
       </div>
     ),
   },
+  {
+    name: "Firebase",
+    icon: (
+      <div className="text-yellow-500">
+        <SiFirebase size={40} />
+      </div>
+    ),
+  },
+  {
+    name: "TypeScript",
+    icon: (
+      <div className="text-blue-600">
+        <SiTypescript size={40} />
+      </div>
+    ),
+  },
+  { name: "MSG91", icon: <MSG91Icon /> },
+  { name: "Shiprocket", icon: <ShiprocketIcon /> },
+  { name: "Render", icon: <RenderIcon /> },
+  { name: "Brevo", icon: <BrevoIcon /> },
+  {
+    name: "WhatsApp API",
+    icon: (
+      <div className="text-green-500">
+        <FaWhatsapp size={40} />
+      </div>
+    ),
+  },
 ];
 
 const Skills = () => {
@@ -325,7 +386,7 @@ const Skills = () => {
               ref={(el) => {
                 if (el) skillRefs.current[i] = el;
               }}
-              className="flex flex-col items-center justify-center p-6 rounded-2xl bg-white shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-500 cursor-pointer"
+              className="flex flex-col items-center justify-center p-6 rounded-2xl bg-white shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-500"
             >
               {skill.icon}
               <p className="mt-3 text-gray-900 font-medium text-sm">
