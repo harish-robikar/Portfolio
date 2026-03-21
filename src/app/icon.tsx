@@ -12,13 +12,21 @@ export const contentType = "image/png";
 
 // Image generation
 export default async function Icon() {
-  // Use VERCEL_URL if it's available, otherwise fallback to localhost for development
-  const origin = process.env.VERCEL_URL 
-    ? `https://${process.env.VERCEL_URL}` 
+  const origin = process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
     : "http://localhost:3000";
-    
-  // Ensure the image URL is absolute since satori/ImageResponse requires it
+
   const imageUrl = `${origin}/harishpic.PNG`;
+
+  let imageData: ArrayBuffer | null = null;
+  try {
+    const response = await fetch(imageUrl);
+    if (response.ok) {
+      imageData = await response.arrayBuffer();
+    }
+  } catch (error) {
+    console.error("Failed to fetch icon image:", error);
+  }
 
   return new ImageResponse(
     (
@@ -35,16 +43,34 @@ export default async function Icon() {
           overflow: "hidden",
         }}
       >
-        <img
-          src={imageUrl}
-          alt="Harish"
-          style={{
-            width: "100%",
-            height: "100%",
-            borderRadius: "50%",
-            objectFit: "cover",
-          }}
-        />
+        {imageData ? (
+          <img
+            src={imageData as any}
+            alt="Harish"
+            style={{
+              width: "100%",
+              height: "100%",
+              borderRadius: "50%",
+              objectFit: "cover",
+            }}
+          />
+        ) : (
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              background: "#d97706",
+              color: "white",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: 16,
+              fontWeight: "bold",
+            }}
+          >
+            H
+          </div>
+        )}
       </div>
     ),
     // ImageResponse options
@@ -53,4 +79,5 @@ export default async function Icon() {
     }
   );
 }
+
 
