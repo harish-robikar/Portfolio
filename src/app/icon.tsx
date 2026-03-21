@@ -41,6 +41,7 @@ export default async function Icon() {
         }}
       >
         {imageData ? (
+          /* eslint-disable-next-line @next/next/no-img-element */
           <img
             src={imageData as unknown as string}
             alt="Harish"
@@ -52,6 +53,7 @@ export default async function Icon() {
             }}
           />
         ) : (
+
           <div
             style={{
               width: "100%",

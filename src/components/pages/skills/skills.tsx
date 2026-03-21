@@ -21,8 +21,8 @@ import {
   SiHtml5,
   SiRedux,
   SiPostman,
-  SiCloudinary,
   SiVercel,
+
   SiNetlify,
   SiExpress,
   SiGit,
