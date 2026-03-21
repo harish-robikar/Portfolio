@@ -310,7 +310,7 @@ const Skills = () => {
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 z-10">
         <h2 className="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-4">
-          My <span className="text-[#0071e3]">Technology</span> Expertise
+          My <span className="text-[#d97706]">Technology</span> Expertise
         </h2>
 
         <p className="text-center text-gray-600 max-w-3xl mx-auto mb-12">

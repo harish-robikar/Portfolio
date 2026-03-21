@@ -24,7 +24,7 @@ const Experience = () => {
     },
   ];
   const colorClasses: Record<string, { bg: string; text: string }> = {
-    apple: { bg: "bg-blue-50", text: "text-[#0071e3]" },
+    apple: { bg: "bg-amber-50", text: "text-[#d97706]" },
     green: { bg: "bg-green-100", text: "text-green-600" },
     red: { bg: "bg-red-100", text: "text-red-600" },
     yellow: { bg: "bg-yellow-100", text: "text-yellow-600" },
@@ -39,7 +39,7 @@ const Experience = () => {
         {/* Section Title */}
         <div className="text-center mb-12">
           <motion.h2
-            className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-gray-900"
+            className="text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-gray-900"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -58,11 +58,11 @@ const Experience = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-14">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              className="group relative p-10 rounded-3xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 hover:border-gray-300 transition-all shadow-sm hover:shadow-xl cursor-pointer"
+              className="group relative p-6 sm:p-10 rounded-3xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 hover:border-gray-300 transition-all shadow-sm hover:shadow-xl cursor-pointer"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: index * 0.2 }}

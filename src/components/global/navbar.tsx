@@ -86,8 +86,7 @@ const Navbar = () => {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href =
-      "https://drive.google.com/uc?export=download&id=1eqriu-Od-BhbiuOlX8I8YJr3j-Y2Pshp";
+    link.href = "/Harish-Resume.pdf";
     link.setAttribute("download", "Harish-Resume.pdf");
     document.body.appendChild(link);
     link.click();
@@ -117,17 +116,17 @@ const Navbar = () => {
             <a
               ref={logoRef}
               href="#hero"
-              className="flex flex-col leading-tight hover:opacity-80 cursor-pointer"
+              className="flex flex-col leading-tight hover:opacity-80 cursor-pointer whitespace-nowrap"
             >
               <span
                 className="text-gray-900 
-               text-xl sm:text-xl md:text-2xl lg:text-2xl font-bold tracking-tight"
+               text-xl sm:text-2xl font-bold tracking-tight"
               >
                 HARISH ROBIKAR
               </span>
               <span
                 className="text-gray-600 
-               text-sm sm:text-sm md:text-base lg:text-base tracking-wide sm:tracking-widest"
+               text-[11px] sm:text-xs md:text-sm tracking-wide sm:tracking-widest"
               >
                 Full Stack Developer
               </span>
@@ -144,13 +143,13 @@ const Navbar = () => {
                   href={item.href}
                   className={`relative text-sm font-medium transition-all duration-300 group cursor-pointer ${
                     activeSection === item.href.replace("#", "")
-                      ? "text-[#0071e3]"
-                      : "text-gray-600 hover:text-[#0071e3]"
+                      ? "text-[#d97706]"
+                      : "text-gray-600 hover:text-[#d97706]"
                   }`}
                 >
                   {item.name}
                   <span
-                    className={`absolute left-0 -bottom-1 h-0.5 bg-[#0071e3] transition-all duration-300 ${
+                    className={`absolute left-0 -bottom-1 h-0.5 bg-[#d97706] transition-all duration-300 ${
                       activeSection === item.href.replace("#", "")
                         ? "w-full"
                         : "w-0 group-hover:w-full"
@@ -238,8 +237,8 @@ const Navbar = () => {
                 onClick={() => setMenuOpen(false)}
                 className={`flex items-center justify-between text-lg font-medium transition-all duration-200 py-2 cursor-pointer ${
                   activeSection === item.href.replace("#", "")
-                    ? "text-[#0071e3]"
-                    : "text-gray-600 hover:text-[#0071e3]"
+                    ? "text-[#d97706]"
+                    : "text-gray-600 hover:text-[#d97706]"
                 }`}
               >
                 <span>{item.name}</span>
