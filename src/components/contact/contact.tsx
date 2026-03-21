@@ -1,10 +1,7 @@
-
-
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import React, { useState } from "react";
-import emailjs from "@emailjs/browser";
 import {
   Send,
   Mail,
@@ -16,38 +13,57 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { toast } from "sonner";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    if (name === "name") {
+      // Only allow alphabets and spaces
+      const cleanedValue = value.replace(/[^a-zA-Z\s]/g, "");
+      setForm({ ...form, [name]: cleanedValue });
+    } else {
+      setForm({ ...form, [name]: value });
+    }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("Sending...");
+  const validateEmail = (email: string) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
 
-    emailjs
-      .send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        form,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      )
-      .then(
-        () => {
-          setStatus("✅ Message sent successfully!");
-          setForm({ name: "", email: "", message: "" });
-        },
-        (error) => {
-          console.error("Email error:", error);
-          setStatus("❌ Failed to send message.");
-        }
-      );
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!validateEmail(form.email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+
+    const sendEmail = async () => {
+      const resp = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!resp.ok) {
+        const err = await resp.json();
+        throw new Error(err.error || "Failed to send message.");
+      }
+
+      setForm({ name: "", email: "", message: "" });
+      return "Message sent successfully!";
+    };
+
+    toast.promise(sendEmail(), {
+      loading: "Sending your message...",
+      success: "Message sent! I will contact you as soon as possible.",
+      error: (err) => `Error: ${err.message}`,
+    });
   };
 
   return (
@@ -64,7 +80,7 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-gray-900 mb-6">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-gray-900 mb-6">
             Get In Touch
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
@@ -77,7 +93,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Contact Information */}
           <motion.div
-            className="bg-white/70 backdrop-blur-xl border border-gray-200 rounded-3xl shadow-md hover:shadow-xl transition p-8 sm:p-10"
+            className="bg-white/70 backdrop-blur-xl border border-gray-200 rounded-3xl shadow-md hover:shadow-xl transition p-6 sm:p-10"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -142,7 +158,7 @@ const Contact = () => {
                   },
                   {
                     icon: <MessageCircle size={20} />,
-                    href: "https://wa.me/919876543210",
+                    href: "https://wa.me/918073809019",
                   },
                 ].map((social, idx) => (
                   <a
@@ -150,7 +166,7 @@ const Contact = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gray-100 hover:bg-black hover:text-white text-gray-700 p-3 rounded-full transition"
+                    className="bg-gray-100 hover:bg-black hover:text-white text-gray-700 p-3 rounded-full transition cursor-pointer"
                   >
                     {social.icon}
                   </a>
@@ -161,7 +177,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <motion.div
-            className="bg-white/70 backdrop-blur-xl border border-gray-200 rounded-3xl shadow-md hover:shadow-xl transition p-8 sm:p-10"
+            className="bg-white/70 backdrop-blur-xl border border-gray-200 rounded-3xl shadow-md hover:shadow-xl transition p-6 sm:p-10"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -230,27 +246,16 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full bg-black text-white py-4 rounded-xl font-medium hover:bg-gray-900 transition flex items-center justify-center gap-2"
+                className="w-full bg-black text-white py-4 rounded-xl font-medium hover:bg-gray-900 transition flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Send size={18} />
                 Send Message
               </button>
-
-              {status && (
-                <div
-                  className={`text-center mt-4 p-3 rounded-xl text-sm ${
-                    status.includes("✅")
-                      ? "bg-green-100 text-green-700"
-                      : "bg-red-100 text-red-700"
-                  }`}
-                >
-                  {status}
-                </div>
-              )}
             </form>
           </motion.div>
         </div>
       </div>
+
     </section>
   );
 };

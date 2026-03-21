@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -14,7 +13,7 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight"
+          className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight"
         >
           About Me
         </motion.h2>
@@ -56,7 +55,7 @@ const About = () => {
         >
           <a
             href="#projects"
-            className="px-8 py-3 text-lg font-medium bg-black text-white rounded-full hover:bg-gray-800 transition"
+            className="px-8 py-3 text-lg font-medium bg-black text-white rounded-full hover:bg-gray-800 transition cursor-pointer"
           >
             Explore My Work
           </a>

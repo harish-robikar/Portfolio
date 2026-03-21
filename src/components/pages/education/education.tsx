@@ -33,7 +33,7 @@ const Education = () => {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Title */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-10 sm:mb-14">
           <motion.h2
             className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-gray-900"
             initial={{ opacity: 0, y: 30 }}
@@ -54,11 +54,11 @@ const Education = () => {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
           {educationData.map((edu, index) => (
             <motion.div
               key={index}
-              className="group relative p-8 rounded-3xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 hover:border-gray-300 transition-all shadow-sm hover:shadow-xl"
+              className="group relative p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 hover:border-gray-300 transition-all shadow-sm hover:shadow-xl"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: index * 0.2 }}

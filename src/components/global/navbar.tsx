@@ -86,8 +86,7 @@ const Navbar = () => {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href =
-      "https://drive.google.com/uc?export=download&id=1eqriu-Od-BhbiuOlX8I8YJr3j-Y2Pshp";
+    link.href = "/Harish-Resume.pdf";
     link.setAttribute("download", "Harish-Resume.pdf");
     document.body.appendChild(link);
     link.click();
@@ -117,17 +116,17 @@ const Navbar = () => {
             <a
               ref={logoRef}
               href="#hero"
-              className="flex flex-col leading-tight hover:opacity-80"
+              className="flex flex-col leading-tight hover:opacity-80 cursor-pointer whitespace-nowrap"
             >
               <span
                 className="text-gray-900 
-               text-xl sm:text-xl md:text-2xl lg:text-2xl font-bold tracking-tight"
+               text-xl sm:text-2xl font-bold tracking-tight"
               >
                 HARISH ROBIKAR
               </span>
               <span
                 className="text-gray-600 
-               text-sm sm:text-sm md:text-base lg:text-base tracking-wide sm:tracking-widest"
+               text-[11px] sm:text-xs md:text-sm tracking-wide sm:tracking-widest"
               >
                 Full Stack Developer
               </span>
@@ -142,15 +141,15 @@ const Navbar = () => {
                     if (el) linksRef.current[i] = el;
                   }}
                   href={item.href}
-                  className={`relative text-sm font-medium transition-all duration-300 group ${
+                  className={`relative text-sm font-medium transition-all duration-300 group cursor-pointer ${
                     activeSection === item.href.replace("#", "")
-                      ? "text-[#0071e3]"
-                      : "text-gray-600 hover:text-[#0071e3]"
+                      ? "text-[#d97706]"
+                      : "text-gray-600 hover:text-[#d97706]"
                   }`}
                 >
                   {item.name}
                   <span
-                    className={`absolute left-0 -bottom-1 h-0.5 bg-[#0071e3] transition-all duration-300 ${
+                    className={`absolute left-0 -bottom-1 h-0.5 bg-[#d97706] transition-all duration-300 ${
                       activeSection === item.href.replace("#", "")
                         ? "w-full"
                         : "w-0 group-hover:w-full"
@@ -166,15 +165,15 @@ const Navbar = () => {
               <button
                 ref={ctaRef}
                 onClick={handleDownload}
-                className="hidden md:flex items-center space-x-2 px-4 py-2 rounded-full text-sm font-medium bg-gray-900 text-white hover:bg-gray-800 border border-gray-300/20 transition-all duration-300 hover:scale-105 active:scale-95"
+                className="hidden md:flex items-center space-x-2 px-4 py-2 rounded-full text-sm font-medium bg-gray-900 text-white hover:bg-gray-800 border border-gray-300/20 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
               >
                 <Download size={16} />
-                <span>Resume</span>
+                <span className="cursor-pointer">Resume</span>
               </button>
 
               {/* Mobile Menu Button */}
               <button
-                className="lg:hidden p-2 rounded-lg text-gray-900 hover:bg-gray-100"
+                className="lg:hidden p-2 rounded-lg text-gray-900 hover:bg-gray-100 cursor-pointer"
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Toggle menu"
               >
@@ -204,7 +203,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center p-6 border-b border-gray-200">
           <a
             href="#hero"
-            className="flex flex-col leading-tight hover:opacity-80"
+            className="flex flex-col leading-tight hover:opacity-80 cursor-pointer"
           >
             <span
               className="text-gray-900 
@@ -222,7 +221,7 @@ const Navbar = () => {
 
           <button
             onClick={() => setMenuOpen(false)}
-            className="p-2 rounded-lg text-gray-500 hover:bg-gray-100 transition-colors duration-200"
+            className="p-2 rounded-lg text-gray-500 hover:bg-gray-100 transition-colors duration-200 cursor-pointer"
           >
             <X size={20} />
           </button>
@@ -236,10 +235,10 @@ const Navbar = () => {
                 key={i}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className={`flex items-center justify-between text-lg font-medium transition-all duration-200 py-2 ${
+                className={`flex items-center justify-between text-lg font-medium transition-all duration-200 py-2 cursor-pointer ${
                   activeSection === item.href.replace("#", "")
-                    ? "text-[#0071e3]"
-                    : "text-gray-600 hover:text-[#0071e3]"
+                    ? "text-[#d97706]"
+                    : "text-gray-600 hover:text-[#d97706]"
                 }`}
               >
                 <span>{item.name}</span>
@@ -252,7 +251,7 @@ const Navbar = () => {
         {/* Mobile Menu Footer */}
         <div className="p-6 border-t border-gray-200">
           <button
-            className="w-full flex items-center justify-center space-x-2 bg-gray-900 text-white py-3 px-4 rounded-xl font-medium hover:bg-gray-800 transition-colors duration-200"
+            className="w-full flex items-center justify-center space-x-2 bg-gray-900 text-white py-3 px-4 rounded-xl font-medium hover:bg-gray-800 transition-colors duration-200 cursor-pointer"
             onClick={handleDownload}
           >
             <Download size={18} />

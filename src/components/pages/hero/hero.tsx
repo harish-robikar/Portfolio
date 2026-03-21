@@ -181,32 +181,33 @@ const Hero = () => {
         className="absolute inset-0 pointer-events-none overflow-hidden "
       >
         <div ref={circleRef} className="absolute inset-0 overflow-hidden ">
-          <div className="absolute top-0 left-0 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-full blur-3xl opacity-40 -translate-x-20 sm:-translate-x-32 md:-translate-x-48 lg:-translate-x-64 -translate-y-20 sm:-translate-y-32 md:-translate-y-48 lg:-translate-y-64"></div>
+          <div className="absolute top-0 left-0 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] bg-gradient-to-br from-amber-50 via-orange-50 to-slate-50 rounded-full blur-3xl opacity-40 -translate-x-20 sm:-translate-x-32 md:-translate-x-48 lg:-translate-x-64 -translate-y-20 sm:-translate-y-32 md:-translate-y-48 lg:-translate-y-64"></div>
 
-          <div className="absolute top-1/3 right-0 w-[180px] h-[180px] sm:w-[250px] sm:h-[250px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] bg-gradient-to-br from-emerald-50 via-cyan-50 to-blue-50 rounded-full blur-3xl opacity-35 translate-x-16 sm:translate-x-24 md:translate-x-32 lg:translate-x-40"></div>
+          <div className="absolute top-1/3 right-0 w-[180px] h-[180px] sm:w-[250px] sm:h-[250px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] bg-gradient-to-br from-orange-50 via-amber-50 to-slate-50 rounded-full blur-3xl opacity-35 translate-x-16 sm:translate-x-24 md:translate-x-32 lg:translate-x-40"></div>
 
-          <div className="absolute bottom-0 left-1/2 w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px] bg-gradient-to-br from-violet-50 via-purple-50 to-pink-50 rounded-full blur-3xl opacity-30 -translate-x-1/2 translate-y-20 sm:translate-y-24 md:translate-y-32 lg:translate-y-40"></div>
+          <div className="absolute bottom-0 left-1/2 w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px] bg-gradient-to-br from-slate-50 via-amber-50 to-orange-50 rounded-full blur-3xl opacity-30 -translate-x-1/2 translate-y-20 sm:translate-y-24 md:translate-y-32 lg:translate-y-40"></div>
         </div>
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-8 xl:px-8 box-border">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-6 md:px-8 lg:px-8 xl:px-8 box-border">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 items-center py-12 sm:py-16 md:py-16 lg:py-16">
           {/* Left Side - Content */}
           <div className="text-center lg:text-left space-y-6 sm:space-y-8 md:space-y-10 order-2 lg:order-1 mt-12">
-            <div ref={textRef} className="space-y-4 sm:space-y-6">
-              <h1 className="text-2xl sm:text-4xl md:text-4xl lg:text-6xl xl:text-6xl font-bold tracking-tight leading-none text-gray-900">
-                Hi, I'm <span className="text-[#0071e3]">Poft Floi</span>
+            <div ref={textRef} className="space-y-3 sm:space-y-6 px-2 sm:px-0">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-gray-900 whitespace-nowrap">
+                Hi, I'm <span className="text-[#d97706]">Harish Robikar</span>
               </h1>
             </div>
 
             {/* Subtitle */}
-            <div ref={subtitleRef} className="space-y-3 sm:space-y-4">
-              <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-800 leading-tight">
+            <div ref={subtitleRef} className="space-y-3 sm:space-y-4 px-2 sm:px-0">
+              <p className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-light text-gray-800 leading-tight">
                 Full Stack Developer
               </p>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed max-w-full sm:max-w-2xl mx-auto lg:mx-0 font-light">
-                Crafting scalable web applications with modern JavaScript
-                technologies and seamless user experiences.
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-full sm:max-w-xl mx-auto lg:mx-0 font-light lg:pr-8">
+                Architecting high-performance full-stack ecosystems and scalable
+                digital solutions with a focus on robust API design and seamless
+                user experiences.
               </p>
             </div>
 
@@ -233,14 +234,14 @@ const Hero = () => {
             >
               <a
                 href="#projects"
-                className="group relative inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 text-base sm:text-lg font-medium text-white bg-black rounded-full transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto sm:min-w-[180px] md:min-w-[200px] max-w-full"
+                className="group relative inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 text-base sm:text-lg font-medium text-white bg-black rounded-full transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto sm:min-w-[180px] md:min-w-[200px] max-w-full cursor-pointer"
               >
                 <span className="relative z-10">View My Work</span>
               </a>
 
               <a
                 href="#contact"
-                className="group inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 text-base sm:text-lg font-medium text-black bg-white border border-gray-300 rounded-full hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto sm:min-w-[180px] md:min-w-[200px] max-w-full"
+                className="group inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 text-base sm:text-lg font-medium text-black bg-white border border-gray-300 rounded-full hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto sm:min-w-[180px] md:min-w-[200px] max-w-full cursor-pointer"
               >
                 <span>Get in Touch</span>
               </a>
@@ -248,43 +249,33 @@ const Hero = () => {
           </div>
 
           {/* Right Side - Visual */}
-          <div className="relative order-1 lg:order-2 flex justify-center items-center">
+          <div className="relative order-1 lg:order-2 flex justify-center items-center py-6 sm:py-0">
             <div
               ref={imageRef}
-              className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl aspect-square"
+              className="relative w-full max-w-[280px] sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl aspect-square"
             >
               {/* Main visual container */}
-              <div className="relative w-full h-full mt-12 md:mt-0 lg:mt-0 xl:mt-0 sm:mt-8">
-                {/* Central developer avatar */}
-                {/* <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[420px] xl:h-[420px] rounded-full bg-gradient-to-br from-gray-900 via-gray-800 to-black flex items-center justify-center shadow-2xl border-4 border-white/20">
-                    <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white">
-                      PF
-                    </span>
-                
-                  </div>
-                </div> */}
-
-                <div className="absolute inset-0 flex items-center justify-center">
+              <div className="relative w-full h-full flex items-center justify-center">
+                <div className="relative w-full aspect-square flex items-center justify-center">
                   <div
-                    className="w-[300px] h-[300px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] xl:w-[500px] xl:h-[500px]
+                    className="w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] xl:w-[500px] xl:h-[500px]
     bg-gradient-to-br from-gray-900 via-gray-800 to-black flex items-center justify-center shadow-2xl border-4 border-white/20
     relative overflow-hidden rounded-full"
                   >
                     <Image
-                      src="/port.jpg"
-                      alt="Profile Image"
+                      src="/harishpic.PNG"
+                      alt="Harish Robikar"
                       fill
-                      className="object-cover"
+                      className="object-cover object-top"
                       priority
                     />
                   </div>
                 </div>
 
                 {/* Decorative elements - responsive positioning and sizing */}
-                <div className="absolute top-8 sm:top-12 md:top-16 right-6 sm:right-8 md:right-12 w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 bg-[#0071e3] rounded-full opacity-40"></div>
+                <div className="absolute top-8 sm:top-12 md:top-16 right-6 sm:right-8 md:right-12 w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 bg-[#d97706] rounded-full opacity-40"></div>
                 <div className="absolute bottom-12 sm:bottom-16 md:bottom-20 left-8 sm:left-12 md:left-16 w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 bg-gray-400 rounded-full opacity-40"></div>
-                <div className="absolute top-20 sm:top-24 md:top-32 left-4 sm:left-6 md:left-8 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#0071e3] rounded-full opacity-30"></div>
+                <div className="absolute top-20 sm:top-24 md:top-32 left-4 sm:left-6 md:left-8 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#d97706] rounded-full opacity-30"></div>
                 <div className="absolute bottom-20 sm:bottom-24 md:bottom-32 right-6 sm:right-8 md:right-12 w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 bg-gray-300 rounded-full opacity-40"></div>
               </div>
             </div>
