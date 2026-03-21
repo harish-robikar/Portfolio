@@ -180,13 +180,13 @@ const Hero = () => {
         ref={backgroundRef}
         className="absolute inset-0 pointer-events-none overflow-hidden "
       >
-        <div ref={circleRef} className="absolute inset-0 overflow-hidden ">
+        {/* <div ref={circleRef} className="absolute inset-0 overflow-hidden ">
           <div className="absolute top-0 left-0 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] bg-gradient-to-br from-amber-50 via-orange-50 to-slate-50 rounded-full blur-3xl opacity-40 -translate-x-20 sm:-translate-x-32 md:-translate-x-48 lg:-translate-x-64 -translate-y-20 sm:-translate-y-32 md:-translate-y-48 lg:-translate-y-64"></div>
 
           <div className="absolute top-1/3 right-0 w-[180px] h-[180px] sm:w-[250px] sm:h-[250px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] bg-gradient-to-br from-orange-50 via-amber-50 to-slate-50 rounded-full blur-3xl opacity-35 translate-x-16 sm:translate-x-24 md:translate-x-32 lg:translate-x-40"></div>
 
           <div className="absolute bottom-0 left-1/2 w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px] bg-gradient-to-br from-slate-50 via-amber-50 to-orange-50 rounded-full blur-3xl opacity-30 -translate-x-1/2 translate-y-20 sm:translate-y-24 md:translate-y-32 lg:translate-y-40"></div>
-        </div>
+        </div> */}
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-6 md:px-8 lg:px-8 xl:px-8 box-border">
