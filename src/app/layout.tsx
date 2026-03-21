@@ -13,9 +13,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : "http://localhost:3000"
+  ),
   title: "Harish Robikar | Full Stack Developer",
-  description: "Architecting high-performance full-stack ecosystems and scalable digital solutions.",
+  description:
+    "Architecting high-performance full-stack ecosystems and scalable digital solutions.",
 };
+
 
 import { Toaster } from "sonner";
 

@@ -12,6 +12,14 @@ export const contentType = "image/png";
 
 // Image generation
 export default async function Icon() {
+  // Use VERCEL_URL if it's available, otherwise fallback to localhost for development
+  const origin = process.env.VERCEL_URL 
+    ? `https://${process.env.VERCEL_URL}` 
+    : "http://localhost:3000";
+    
+  // Ensure the image URL is absolute since satori/ImageResponse requires it
+  const imageUrl = `${origin}/harishpic.PNG`;
+
   return new ImageResponse(
     (
       // ImageResponse JSX element
@@ -28,7 +36,7 @@ export default async function Icon() {
         }}
       >
         <img
-          src={new URL("/harishpic.PNG", "http://localhost:3000").toString()}
+          src={imageUrl}
           alt="Harish"
           style={{
             width: "100%",
@@ -45,3 +53,4 @@ export default async function Icon() {
     }
   );
 }
+
