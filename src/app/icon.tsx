@@ -11,14 +11,21 @@ export const contentType = "image/png";
 
 // Image generation
 export default async function Icon() {
-  let imageData: Buffer | null = null;
+  let imageData: ArrayBuffer | null = null;
+
 
   try {
     // In Node.js runtime, we can read the file directly from the public directory
     const filePath = path.join(process.cwd(), "public", "harishpic.PNG");
     if (fs.existsSync(filePath)) {
-      imageData = fs.readFileSync(filePath);
+      const buffer = fs.readFileSync(filePath);
+      // Convert Node.js Buffer to ArrayBuffer
+      imageData = buffer.buffer.slice(
+        buffer.byteOffset,
+        buffer.byteOffset + buffer.byteLength
+      ) as ArrayBuffer;
     }
+
   } catch (error) {
     console.error("Failed to read icon image from filesystem:", error);
   }
