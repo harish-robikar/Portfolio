@@ -6,26 +6,66 @@ import Image from "next/image";
 
 const projects = [
   {
-    title: "BECHDU – Electronics Buy & Sell Marketplace",
+    title: "ClaroFX – Web3 & Forex Asset Management Platform",
     description:
-      "A comprehensive electronics marketplace with multi-vendor support. Features a React admin dashboard and a Flutter QC mobile app for partners. Engineered with automated PDF invoice generation and receipt management for both buying and selling sides, AWS S3 for secure KYC/QC storage, and real-time Firebase tracking with automated data synchronization.",
+      "Architected a full-stack FinTech and Web3 investment platform featuring an investor portal, admin operations suite, and high-precision REST APIs. Built an automated daily yield distribution engine using Node-Cron and MongoDB ACID transactions to calculate and credit dynamic ROI rates (0.3%–0.8%). Implemented a recursive 9-level matching referral commission system with dynamic tier-eligibility validation and a strict 400% (4X) lifetime capital earning cap. Prevented floating-point rounding errors using Decimal.js (40-digit precision) paired with an immutable double-entry ledger, and secured accounts with TOTP 2FA and WalletConnect on-chain deposits.",
+    image: "/project/clarofx.png",
+    type: "Full Stack",
+    tech: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "MongoDB (ACID)",
+      "Tailwind CSS",
+      "Decimal.js",
+      "Node-Cron",
+      "WalletConnect",
+      "TOTP 2FA",
+      "REST APIs",
+    ],
+    link: "https://clarofx.com/",
+  },
+  {
+    title: "MRQ GOLD – Digital Gold Investment Platform",
+    description:
+      "Developed digital gold backend supporting web, mobile apps, and Admin Dashboard. Created gold accumulation workflows, automated allocations, and installment engine. Implemented role-based access control (RBAC) in Admin Dashboard for operations. Designed and integrated REST APIs for Flutter mobile app supporting full lifecycle.",
+    image: "/project/mrqjewellery.png",
+    type: "Full Stack",
+    tech: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "REST APIs",
+      "JWT Authentication",
+      "Flutter",
+      "Next.js",
+    ],
+    link: "https://mrqjewellery.com/",
+  },
+  {
+    title: "BECHDU – Electronics Buyback & Multi-Vendor Marketplace",
+    description:
+      "Engineered an end-to-end electronics marketplace and buyback ecosystem. Built backend and REST APIs for the Buyback Dealer App enabling real-time phone evaluation, resale workflows, automated quality inspection (QC), and exchange/inventory management. Configured multi-role workflows with location-based product visibility across 100+ listings. Integrated Razorpay instant payouts, real-time Firebase alerts, Shiprocket logistics tracking, AWS S3 for secure KYC storage, dynamic PDF invoice/receipt generation, and a centralized CMS portal.",
     image: "/project/bechdu.png",
     type: "Full Stack",
     tech: [
       "React.js",
+      "Next.js",
       "Flutter",
       "Node.js",
       "Express.js",
-      "Tailwind CSS",
       "MongoDB",
-      "AWS S3",
+      "Tailwind CSS",
+      "Razorpay",
       "Firebase",
+      "AWS S3",
+      "Shiprocket",
+      "Puppeteer",
       "JWT",
       "MSG91",
-      "Puppeteer",
-      "Multer",
-      "Shiprocket",
-      "Payment Gateway",
       "Brevo",
     ],
     link: "https://bechdu.in/",
@@ -201,7 +241,7 @@ const Projects = () => {
           <AnimatePresence mode="popLayout">
             {visibleProjects.map((project, index) => (
               <motion.div
-                key={index}
+                key={project.title}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
