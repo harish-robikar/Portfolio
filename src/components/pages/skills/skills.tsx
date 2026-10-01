@@ -28,7 +28,10 @@ import {
   SiGit,
   SiFirebase,
   SiAmazonwebservices,
+  SiRazorpay,
+  SiWalletconnect,
 } from "react-icons/si";
+import { MdPhoneInTalk } from "react-icons/md";
 import Image from "next/image";
 
 // Register ScrollTrigger plugin
@@ -114,6 +117,47 @@ const GSAPIcon = () => (
       d="M322.9 167.3c-9.6-3.8-20.5.9-24.3 10.5l-27.6 69.3-37.3-47.6c-7-9-20-10.7-29-3.7s-10.7 20-3.7 29l55.7 71c4.2 5.4 10.8 8.4 17.6 8.1 7-.3 13.2-4.6 15.9-11l41.2-103.4c3.8-9.6-0.9-20.5-10.5-24.3z"
     />
   </svg>
+);
+
+// PayU SVG Component
+const PayUIcon = () => (
+  <div className="w-10 h-10 rounded-xl bg-[#A5C800] flex items-center justify-center shadow-sm">
+    <span className="text-white font-black text-xs tracking-tight">PayU</span>
+  </div>
+);
+
+// TP Wallet (TokenPocket) SVG Component
+const TPWalletIcon = () => (
+  <div className="w-10 h-10 rounded-xl bg-[#2980FE] flex items-center justify-center shadow-sm">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4 6C4 4.89543 4.89543 4 6 4H18C19.1046 4 20 4.89543 20 6V9H4V6Z"
+        fill="white"
+      />
+      <path
+        d="M9 9H15V20H9V9Z"
+        fill="white"
+      />
+      <path
+        d="M15 9H18C19.1046 9 20 9.89543 20 11V14C20 15.1046 19.1046 16 18 16H15V9Z"
+        fill="white"
+        fillOpacity="0.85"
+      />
+    </svg>
+  </div>
+);
+
+// IVR Integration SVG Component
+const IVRIcon = () => (
+  <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-blue-500 flex items-center justify-center text-white shadow-sm">
+    <MdPhoneInTalk size={22} />
+  </div>
 );
 
 // Floating Background Icons
@@ -340,6 +384,34 @@ const skills = [
       </div>
     ),
   },
+  {
+    name: "Razorpay",
+    icon: (
+      <div className="text-[#3395FF]">
+        <SiRazorpay size={40} />
+      </div>
+    ),
+  },
+  {
+    name: "PayU",
+    icon: <PayUIcon />,
+  },
+  {
+    name: "WalletConnect",
+    icon: (
+      <div className="text-[#3B99FC]">
+        <SiWalletconnect size={40} />
+      </div>
+    ),
+  },
+  {
+    name: "TP Wallet Connect",
+    icon: <TPWalletIcon />,
+  },
+  {
+    name: "IVR Connection",
+    icon: <IVRIcon />,
+  },
 ];
 
 const Skills = () => {
@@ -389,7 +461,7 @@ const Skills = () => {
               className="flex flex-col items-center justify-center p-6 rounded-2xl bg-white shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-500"
             >
               {skill.icon}
-              <p className="mt-3 text-gray-900 font-medium text-sm">
+              <p className="mt-3 text-gray-900 font-medium text-sm text-center">
                 {skill.name}
               </p>
             </div>
